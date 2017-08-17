@@ -1,0 +1,22 @@
+<form
+  name="saveForm"
+  ng-submit="topNavOpts.saveDataplan()"
+  novalidate>
+  <div class="form-group">
+    <label>Dataplan Id:</label>
+    <input
+      type="text"
+      class="form-control"
+      ng-model="topNavScope.dataplanId"
+      name="dataplanId"
+      id="dataplanId"
+      input-focus
+      required>
+  </div>
+  <div
+    class="kuiInputNote kuiInputNote--danger"
+    ng-show="saveForm.dataplanId.$touched && saveForm.dataplanId.$error.required">
+    Dataplan Id is required.
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

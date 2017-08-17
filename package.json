@@ -1,0 +1,33 @@
+{
+  "author": "Jim Unger",
+  "name": "datagen",
+  "license": "Apache-2.0",
+  "description": "none",
+  "scripts": {
+    "start": "plugin-helpers start",
+    "build": "plugin-helpers build"
+  },
+  "dependencies": {
+    "angular-sanitize": "1.4.9",
+    "duration-parser": "1.0.2",
+    "elasticsearch": "11.0.1",
+    "gaussian": "1.1.0",
+    "joi": "6.10.1",
+    "jquery": "2.1.4",
+    "lodash": "3.10.1",
+    "moment": "2.11.2",
+    "node-uuid": "1.4.7"
+  },
+  "kibana": {
+    "version": "kibana"
+  },
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BigFunger/datagen.git"
+  },
+  "devDependencies": {
+    "@elastic/plugin-helpers": "~6.0.2",
+    "expect.js": "0.3.1"
+  }
+}

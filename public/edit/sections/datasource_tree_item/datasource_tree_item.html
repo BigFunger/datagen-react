@@ -1,0 +1,53 @@
+<div
+  class="tree-item"
+  ng-class="{ expanded: datasourceTreeItem.expanded === true }"
+  ng-click="datasourceTreeItem.selectItem()">
+  <div class="collapse-icon">
+    <button
+      type="button"
+      tooltip="Expand"
+      tooltip-append-to-body="true"
+      class="btn btn-xs"
+      ng-show="!datasourceTreeItem.expanded && datasourceTreeItem.childItems.length > 0"
+      ng-click="datasourceTreeItem.expanded = true">
+      <i aria-hidden="true" class="fa fa-caret-right"></i>
+    </button>
+    <button
+      type="button"
+      tooltip="Collapse"
+      tooltip-append-to-body="true"
+      class="btn btn-xs"
+      ng-show="datasourceTreeItem.expanded && datasourceTreeItem.childItems.length > 0"
+      ng-click="datasourceTreeItem.expanded = false">
+      <i aria-hidden="true" class="fa fa-caret-down"></i>
+    </button>
+  </div>
+  <div class="status-icon">
+    <i
+      aria-hidden="true"
+      class="fa fa-sliders valid"
+      tooltip="Data Source"
+      tooltip-append-to-body="true">
+    </i>
+  </div>
+  <div class="title">
+    <span class="treeitem-type">{{datasourceTreeItem.datasourceShell.title}}</span>
+    <span class="treeitem-description">{{datasourceTreeItem.datasourceShell.description}}</span>
+  </div>
+  <div class="buttons">
+    <button
+      type="button"
+      tooltip="Delete"
+      tooltip-append-to-body="true"
+      class="btn btn-xs"
+      ng-click="datasourceTreeItem.delete()">
+      <i aria-hidden="true" class="fa fa-trash"></i>
+    </button>
+  </div>
+</div>
+<datasource-tree
+  class="on-error branch"
+  ng-show="datasourceTreeItem.expanded && datasourceTreeItem.childItems.length > 0"
+  items="datasourceTreeItem.childItems"
+  root-tree="datasourceTreeItem.rootTree">
+</datasource-tree>

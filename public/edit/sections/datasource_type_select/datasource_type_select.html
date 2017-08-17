@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label>Data Type:</label>
+  <div>
+    <select
+      ng-model="typeId"
+      ng-options="datasourceType.typeId as datasourceType.title for datasourceType in datasourceTypes"
+    ></select>
+  </div>
+</div>

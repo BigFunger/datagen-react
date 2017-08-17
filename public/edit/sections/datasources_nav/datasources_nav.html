@@ -1,0 +1,16 @@
+<datasource-tree-header
+  title="Data Sources"
+  datasource-collection="dataplan.datasourceCollection"
+  selected-item="datasources.selectedItem">
+</datasource-tree-header>
+<p
+  class="help-message"
+  ng-show="dataplan.datasourceCollection.datasourceShells.length === 0">
+  This is a very informative help message. Really.
+</p>
+<datasource-tree
+  items="treeItems"
+  selected="datasources.selectedItem"
+  ng-hide="dataplan.datasourceCollection.datasourceShells.length === 0">
+</datasource-tree>
+

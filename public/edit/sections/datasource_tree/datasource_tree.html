@@ -1,0 +1,26 @@
+<div class="branch-header">On Data Error</div>
+<div
+  class="selectable-list"
+  draggable-container="datasourceTree.items">
+  <div
+    ng-repeat="item in datasourceTree.items"
+    draggable-item="item">
+
+    <dataplan-tree-item
+      dataplan="item"
+      expanded="true"
+      ng-if="item.constructor.name === 'Dataplan'"
+      root-tree="datasourceTree.rootTree"
+      ng-class="{ active: datasourceTree.rootTree.selected === item }">
+    </dataplan-tree-item>
+
+    <datasource-tree-item
+      datasource-shell="item"
+      ng-if="item.constructor.name === 'DatasourceShell'"
+      root-tree="datasourceTree.rootTree"
+      ng-class="{ active: datasourceTree.rootTree.selected === item }">
+    </datasource-tree-item>
+
+  </div>
+</div>
+<div class="branch-footer"></div>

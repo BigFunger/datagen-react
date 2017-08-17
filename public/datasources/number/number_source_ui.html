@@ -1,0 +1,55 @@
+<div class="form-group">
+  <label>Field Name:</label>
+  <input
+    type="text"
+    class="form-control"
+    ng-trim="false"
+    ng-model="datasource.field"
+    input-focus
+    id="field"
+    name="field"
+    required pattern="[a-zA-Z0-9_@\-\$\.]*"
+    required>
+  <div
+    class="kuiInputNote kuiInputNote--danger"
+    ng-show="datasourceForm.field.$error.pattern">
+    Field Name must contain only letters, underscores, dashes, and numbers.
+  </div>
+  <div
+    class="kuiInputNote kuiInputNote--danger"
+    ng-show="datasourceForm.field.$touched && datasourceForm.field.$error.required">
+    Watch Id is required.
+  </div>
+</div>
+<div class="form-group">
+  <label>Numeric Type:</label>
+  <select
+    class="form-control"
+    ng-model="datasource.type"
+    ng-options="type for type in datasource.types">
+  </select>
+</div>
+<div class="form-group">
+  <label>Range Min:</label>
+  <input
+    type="number"
+    class="form-control"
+    ng-trim="false"
+    ng-model="datasource.rangeMin">
+</div>
+<div class="form-group">
+  <label>Range Max:</label>
+  <input
+    type="number"
+    class="form-control"
+    ng-trim="false"
+    ng-model="datasource.rangeMax">
+</div>
+<div class="form-group" ng-show="datasource.type === 'scaled_float'">
+  <label>Scaling Factor:</label>
+  <input
+    type="text"
+    class="form-control"
+    ng-trim="false"
+    ng-model="datasource.scalingFactor">
+</div>

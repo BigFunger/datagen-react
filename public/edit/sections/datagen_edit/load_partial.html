@@ -1,0 +1,17 @@
+<form
+  role="loadForm"
+  ng-submit="topNavOpts.loadDataplan()"
+  novalidate>
+  <div class="form-group">
+    <label>Dataplan Id:</label>
+    <input
+      type="text"
+      class="form-control"
+      ng-model="topNavScope.dataplanId"
+      name="dataplanId"
+      id="dataplanId"
+      input-focus
+      required>
+  </div>
+  <button type="submit" class="btn btn-primary">Load</button>
+</form>

@@ -1,0 +1,19 @@
+<form name="datasourceForm">
+  <h3 ng-show="datasourceShell.datasource">
+    {{datasourceShell.datasource.title}} {{datasourceShell.description}}
+  </h3>
+  <h3 ng-hide="datasourceShell.datasource">
+    New Data Source
+  </h3>
+
+  <div>
+    <datasource-type-select
+      type-id="typeId"
+      ng-show="datasourceShell">
+    </datasource-type-select>
+    <div
+      class="datasource-detail-content"
+      ng-show="datasourceShell.typeId">
+    </div>
+  </div>
+</form>

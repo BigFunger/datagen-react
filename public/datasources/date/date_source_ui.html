@@ -1,0 +1,46 @@
+<div class="form-group">
+  <label>Field Name:</label>
+  <input
+    type="text"
+    class="form-control"
+    ng-trim="false"
+    ng-model="datasource.field"
+    input-focus>
+</div>
+<div class="form-group">
+  <label>Value Source:</label>
+  <ul>
+    <li><label><input type="radio" ng-model="datasource.method" value="now"/> Now</label></li>
+    <li><label><input type="radio" ng-model="datasource.method" value="value"/> Static value</label></li>
+    <li><label><input type="radio" ng-model="datasource.method" value="range"/> Date Range</label></li>
+  </ul>
+</div>
+<div class="form-group" ng-show="datasource.method === 'value'">
+  <label>Date:</label>
+  <input type="text" ng-model="datasource.value" />
+</div>
+<div class="form-group" ng-show="datasource.method === 'range'">
+  <label>Start Date:</label>
+  <input type="text" ng-model="datasource.startDate" />
+</div>
+<div class="form-group" ng-show="datasource.method === 'range'">
+  <label>End Date:</label>
+  <input type="text" ng-model="datasource.endDate" />
+</div>
+
+<div class="form-group" ng-show="datasource.method === 'range'">
+  <input type="checkbox" ng-model="datasource.applyNormalDistribution" id="applyNormalDistribution">
+  <label for="applyNormalDistribution">Apply Normal Distribution:</label>
+</div>
+<div class="form-group" ng-show="datasource.method === 'range' && datasource.applyNormalDistribution">
+  <label>Initial Offset:</label>
+  <input type="text" ng-model="datasource.initialOffset" />
+</div>
+<div class="form-group" ng-show="datasource.method === 'range' && datasource.applyNormalDistribution">
+  <label>Distribution Window:</label>
+  <input type="text" ng-model="datasource.distributionWindow" />
+</div>
+<div class="form-group" ng-show="datasource.method === 'range' && datasource.applyNormalDistribution">
+  <label>Offset:</label>
+  <input type="text" ng-model="datasource.distributionOffset" />
+</div>

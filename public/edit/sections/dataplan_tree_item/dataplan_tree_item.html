@@ -1,0 +1,42 @@
+<div
+  class="tree-item"
+  ng-class="{ expanded: dataplanTreeItem.expanded === true }"
+  ng-click="dataplanTreeItem.selectItem()">
+  <div class="collapse-icon">
+    <button
+      type="button"
+      tooltip="Expand"
+      tooltip-append-to-body="true"
+      class="btn btn-xs"
+      ng-show="!dataplanTreeItem.expanded && dataplanTreeItem.childItems.length > 0"
+      ng-click="dataplanTreeItem.expanded = true">
+      <i aria-hidden="true" class="fa fa-caret-right"></i>
+    </button>
+    <button
+      type="button"
+      tooltip="Collapse"
+      tooltip-append-to-body="true"
+      class="btn btn-xs"
+      ng-show="dataplanTreeItem.expanded && dataplanTreeItem.childItems.length > 0"
+      ng-click="dataplanTreeItem.expanded = false">
+      <i aria-hidden="true" class="fa fa-caret-down"></i>
+    </button>
+  </div>
+  <div class="status-icon">
+    <i
+      aria-hidden="true"
+      class="fa fa-tasks valid"
+      tooltip="Data plan"
+      tooltip-append-to-body="true">
+    </i>
+  </div>
+  <div class="title">
+    <span class="treeitem-type">{{dataplanTreeItem.dataplan.title}}</span>
+  </div>
+</div>
+<datasource-tree
+  class="branch"
+  ng-show="dataplanTreeItem.expanded && dataplanTreeItem.childItems.length > 0"
+  items="dataplanTreeItem.childItems"
+  root-tree="dataplanTreeItem.rootTree">
+</datasource-tree>
